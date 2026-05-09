@@ -291,7 +291,7 @@ def downloader(message):
             with yt_dlp.YoutubeDL({}) as ydl:
 
                 info = ydl.extract_info(
-                    f"ytsearch5:{text}",
+                    text if "youtube.com/" in text or "youtu.be/" in text else f"ytsearch1:{text}",
                     download=False
                 )
 
