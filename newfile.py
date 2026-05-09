@@ -111,12 +111,10 @@ def download_music(call):
         "<b>⏳ Yuklanmoqda...</b>"
     )
 
-    try:
-
-    ydl_opts = {
+    try: 
+        ydl_opts = {
         "format": "best",
         "outtmpl": "downloads/%(title)s.%(ext)s",
-
         "quiet": True,
         "nocheckcertificate": True,
         "ignoreerrors": True,
