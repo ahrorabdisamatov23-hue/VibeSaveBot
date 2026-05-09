@@ -113,7 +113,7 @@ def download_music(call):
 
     try:
 
-        ydl_opts = {
+    ydl_opts = {
     "format": "best",
     "outtmpl": "downloads/%(title)s.%(ext)s",
 
@@ -123,8 +123,14 @@ def download_music(call):
     "no_warnings": True,
 
     "cookiefile": "cookies.txt",
-    "geo_bypass": True
+    "geo_bypass": True,
+
+    "extractor_args": {
+        "youtube": {
+            "player_client": ["android"]
         }
+    },
+    }
 
         with yt_dlp.YoutubeDL(ydl_opts) as ydl:
 
