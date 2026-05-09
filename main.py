@@ -98,7 +98,8 @@ def check_sub(call):
             "❌ Botdan to'liq foydalanish uchun quyidagi kanalga obuna boling",
             show_alert=True
         )
-
+        
+ADMIN_ID = [6909366422]
 
 # MUSIQA TANLASH
 @bot.callback_query_handler(func=lambda call: call.data.startswith("music_"))
