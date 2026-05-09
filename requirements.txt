@@ -1,4 +1,5 @@
 python-telegram-bot
+pyTelegramBotAPI
 yt-dlp
 requests
 ffmpeg-python
