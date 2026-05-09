@@ -118,6 +118,11 @@ def download_music(call):
     'outtmpl': '%(title)s.%(ext)s',
     'noplaylist': True,
     'cookiefile': None,
+    'extractor_args': {
+        'youtube': {
+            'player_client': ['android']
+        }
+    },
         }
 
         with yt_dlp.YoutubeDL(ydl_opts) as ydl:
