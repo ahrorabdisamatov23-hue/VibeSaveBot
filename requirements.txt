@@ -1,4 +1,1 @@
-python-telegram-bot
-yt-dlp
-requests
-ffmpeg-python
+pip install -r requirements.txt
