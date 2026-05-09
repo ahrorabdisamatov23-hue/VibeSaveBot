@@ -125,7 +125,6 @@ def music_download(call):
             "outtmpl": "downloads/%(title)s.%(ext)s",
             "quiet": True,
             "noplaylist": True,
-            "cookiefile": "cookies.txt"
         }
 
         with yt_dlp.YoutubeDL(ydl_opts) as ydl:
