@@ -111,25 +111,24 @@ def download_music(call):
         "<b>⏳ Yuklanmoqda...</b>"
     )
 
-    try: 
-        ydl_opts = {
-        "format": "best",
-        "outtmpl": "downloads/%(title)s.%(ext)s",
-        "quiet": True,
-        "nocheckcertificate": True,
-        "ignoreerrors": True,
-        "no_warnings": True,
+    ydl_opts = {
+    "format": "best",
+    "outtmpl": "downloads/%(title)s.%(ext)s",
 
-        "cookiefile": "cookies.txt",
-        "geo_bypass": True,
+    "quiet": True,
+    "nocheckcertificate": True,
+    "ignoreerrors": True,
+    "no_warnings": True,
 
-        "extractor_args": {
-            "youtube": {
-                "player_client": ["android"]
-            }
-        },
+    "cookiefile": "cookies.txt",
+    "geo_bypass": True,
+
+    "extractor_args": {
+        "youtube": {
+            "player_client": ["android"]
+        }
     }
-
+    }
     with yt_dlp.YoutubeDL(ydl_opts) as ydl:
 
         info = ydl.extract_info(
