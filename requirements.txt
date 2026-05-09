@@ -3,3 +3,6 @@ pyTelegramBotAPI
 yt-dlp
 requests
 ffmpeg-python
+pyTelegramBotAPI
+yt-dlp
+requests
