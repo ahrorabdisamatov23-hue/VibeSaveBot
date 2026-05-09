@@ -290,7 +290,6 @@ def downloader(message):
 
             ydl_opts = {
                 "quiet": True,
-                "cookiefile": "cookies.txt"
             }
 
             with yt_dlp.YoutubeDL(ydl_opts) as ydl:
