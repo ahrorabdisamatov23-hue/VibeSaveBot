@@ -114,9 +114,10 @@ def download_music(call):
     try:
 
         ydl_opts = {
-            'format': 'bestaudio',
-            'outtmpl': '%(title)s.%(ext)s',
-            'noplaylist': True
+    'format': 'bestaudio',
+    'outtmpl': '%(title)s.%(ext)s',
+    'noplaylist': True,
+    'cookiefile': None,
         }
 
         with yt_dlp.YoutubeDL(ydl_opts) as ydl:
