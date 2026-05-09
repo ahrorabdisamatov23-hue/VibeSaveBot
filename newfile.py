@@ -112,26 +112,34 @@ def download_music(call):
     )
 
     try:
-    ydl_opts = {
 
     ydl_opts = {
-    "format": "best",
-    "outtmpl": "downloads/%(title)s.%(ext)s",
+        "format": "best",
+        "outtmpl": "downloads/%(title)s.%(ext)s",
 
-    "quiet": True,
-    "nocheckcertificate": True,
-    "ignoreerrors": True,
-    "no_warnings": True,
+        "quiet": True,
+        "nocheckcertificate": True,
+        "ignoreerrors": True,
+        "no_warnings": True,
 
-    "cookiefile": "cookies.txt",
-    "geo_bypass": True,
+        "cookiefile": "cookies.txt",
+        "geo_bypass": True,
 
-    "extractor_args": {
-        "youtube": {
-            "player_client": ["android"]
-        }
-    },
+        "extractor_args": {
+            "youtube": {
+                "player_client": ["android"]
+            }
+        },
     }
+
+    with yt_dlp.YoutubeDL(ydl_opts) as ydl:
+
+        info = ydl.extract_info(
+            song["url"],
+            download=True
+        )
+
+    filename = ydl.prepare_filename(info)
 
         with yt_dlp.YoutubeDL(ydl_opts) as ydl:
 
