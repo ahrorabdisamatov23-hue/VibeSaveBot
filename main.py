@@ -99,8 +99,6 @@ def check_sub(call):
             show_alert=True
         )
         
-ADMIN_ID = [6909366422]
-
 # MUSIQA TANLASH
 @bot.callback_query_handler(func=lambda call: call.data.startswith("music_"))
 def music_download(call):
