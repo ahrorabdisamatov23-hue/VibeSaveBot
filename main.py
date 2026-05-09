@@ -2,7 +2,7 @@ from telebot import TeleBot, types
 import yt_dlp
 import os
 
-TOKEN = "8684094849:AAG_15Tm_qOhxYk-P9IOQ5ZPOYxBAJVybME"
+TOKEN = os.getenv("BOT_TOKEN")
 CHANNEL = "@VibeSavechannel"
 
 bot = TeleBot(TOKEN, parse_mode="HTML")
