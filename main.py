@@ -138,7 +138,7 @@ def music_download(call):
 
             title = info.get("title", "Music")
 
-        markup = types.InlineKeyboardMarkup(row_width=2)
+        markup = types.InlineKeyboardMarkup(row_width=1)
 
         share_btn = types.InlineKeyboardButton(
             "📤 Ulashish",
