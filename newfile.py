@@ -17,7 +17,7 @@ def start(message):
     text = """
 <b>🔥 ASSALOMU ALAYKUM!</b>
 
-<b>Bot orqali quyidagilarni yuklab olishingiz mumkin:</b>
+<b>@VibeSave24Bot orqali quyidagilarni yuklab olishingiz mumkin:</b>
 
 • INSTAGRAM
 • TIKTOK
