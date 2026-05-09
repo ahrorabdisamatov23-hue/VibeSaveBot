@@ -112,6 +112,7 @@ def download_music(call):
     )
 
     try:
+    ydl_opts = {
 
     ydl_opts = {
     "format": "best",
