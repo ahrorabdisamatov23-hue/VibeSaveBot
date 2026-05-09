@@ -283,60 +283,6 @@ def downloader(message):
                 wait.message_id
             )
 
-    # MUSIC SEARCH
-    else:
-
-        try:
-
-            ydl_opts = {
-                "quiet": True,
-            }
-
-            with yt_dlp.YoutubeDL(ydl_opts) as ydl:
-
-                info = ydl.extract_info(
-                    f"ytsearch5:{text}",
-                    download=False
-                )
-
-            results = info["entries"]
-
-            search_results[message.chat.id] = results
-
-            result_text = "🎵 <b>Qidiruv natijalari:</b>\n\n"
-
-            markup = types.InlineKeyboardMarkup(row_width=5)
-
-            buttons = []
-
-            for i, item in enumerate(results):
-
-                title = item["title"]
-
-                result_text += f"{i+1}. {title[:45]}\n"
-
-                btn = types.InlineKeyboardButton(
-                    f"{i+1}",
-                    callback_data=f"music_{i}"
-                )
-
-                buttons.append(btn)
-
-            markup.add(*buttons)
-
-            bot.send_message(
-                message.chat.id,
-                result_text,
-                reply_markup=markup
-            )
-
-        except Exception as e:
-
-            bot.send_message(
-                message.chat.id,
-                f"<b>❌ Xatolik:</b>\n<code>{e}</code>"
-            )
-
 
 # GURUH
 @bot.my_chat_member_handler()
