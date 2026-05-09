@@ -111,32 +111,26 @@ def download_music(call):
         "<b>⏳ Yuklanmoqda...</b>"
     )
 
-    ydl_opts = {
-    "format": "best",
-    "outtmpl": "downloads/%(title)s.%(ext)s",
+    try:
 
-    "quiet": True,
-    "nocheckcertificate": True,
-    "ignoreerrors": True,
-    "no_warnings": True,
+        ydl_opts = {
+            "format": "best",
+            "outtmpl": "downloads/%(title)s.%(ext)s",
 
-    "cookiefile": "cookies.txt",
-    "geo_bypass": True,
+            "quiet": True,
+            "nocheckcertificate": True,
+            "ignoreerrors": True,
+            "no_warnings": True,
 
-    "extractor_args": {
-        "youtube": {
-            "player_client": ["android"]
+            "cookiefile": "cookies.txt",
+            "geo_bypass": True,
+
+            "extractor_args": {
+                "youtube": {
+                    "player_client": ["android"]
+                }
+            }
         }
-    }
-    }
-    with yt_dlp.YoutubeDL(ydl_opts) as ydl:
-
-        info = ydl.extract_info(
-            song["url"],
-            download=True
-        )
-
-    filename = ydl.prepare_filename(info)
 
         with yt_dlp.YoutubeDL(ydl_opts) as ydl:
 
@@ -147,9 +141,9 @@ def download_music(call):
 
             filename = ydl.prepare_filename(info)
 
-            title = info.get("title", "Music")
+        title = info.get("title", "Music")
 
-            thumbnail = info.get("thumbnail")
+        thumbnail = info.get("thumbnail")
 
         buttons = types.InlineKeyboardMarkup(row_width=2)
 
@@ -159,7 +153,7 @@ def download_music(call):
         )
 
         group_btn = types.InlineKeyboardButton(
-            "👥 Guruhga qo‘shish",
+            "👥 Guruhga qo'shish",
             url="https://t.me/VibeSave24Bot?startgroup=true"
         )
 
@@ -195,11 +189,6 @@ def download_music(call):
             call.message.chat.id,
             wait.message_id
         )
-
-
-# ASOSIY HANDLER
-@bot.message_handler(func=lambda message: True)
-def downloader(message):
 
     if message.text.startswith("/"):
         return
